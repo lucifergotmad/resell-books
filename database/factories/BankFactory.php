@@ -1,0 +1,21 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class BankFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'kode_bank' => 'BCA',
+            'nama_bank' => 'BANK CENTRAL ASIA',
+        ];
+    }
+}
