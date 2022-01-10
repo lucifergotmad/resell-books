@@ -15,4 +15,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::post('/api/login', [AuthController::class, 'login']);
+Route::post('/api/register', [AuthController::class, 'register']);
+
 Route::get('/login', [AuthController::class, 'loginView']);
+Route::get('/register', [AuthController::class, 'registerView']);
