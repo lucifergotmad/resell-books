@@ -10,6 +10,6 @@ class Bank extends Model
     use HasFactory;
 
     public function rekening() {
-        return $this->belongsTo(Rekening::class);
+        return $this->hasMany(Rekening::class);
     }
 }
