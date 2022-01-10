@@ -20,17 +20,6 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
-    <style>
-        .h-full {
-            height: 100%;
-            min-height: 100vh
-        }
-
-        .align-items-center {
-            align-items: center
-        }
-    </style>
-
 </head>
 
 <body class="bg-gradient-primary h-full">
