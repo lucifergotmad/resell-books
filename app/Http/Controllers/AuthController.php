@@ -9,7 +9,13 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function registerView() {
+    public function registerView() 
+    {
         return view('auth.register');
+    }
+
+    public function forgotPasswordView()
+    {
+        return view('auth.forgot_password');
     }
 }
