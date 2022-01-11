@@ -19,3 +19,4 @@ Route::post('/api/register', [AuthController::class, 'register']);
 
 Route::get('/login', [AuthController::class, 'loginView']);
 Route::get('/register', [AuthController::class, 'registerView']);
+Route::get('/forgot-password', [AuthController::class, 'forgotPasswordView']);
