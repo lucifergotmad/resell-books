@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,5 @@ Route::post('/api/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'loginView']);
 Route::get('/register', [AuthController::class, 'registerView']);
 Route::get('/forgot-password', [AuthController::class, 'forgotPasswordView']);
+
+Route::get('/', AdminController::class);
