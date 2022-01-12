@@ -17,11 +17,11 @@ class CreateBukusTable extends Migration
             $table->id();
             $table->string('kode_buku')->unique();
             $table->string('judul_buku')->unique();
+            $table->string('kode_kategori');
             $table->string('pengarang');
             $table->double('berat');
             $table->double('harga_jual');
             $table->double('harga_sewa');
-            $table->foreignId('kode_kategori');
             $table->string('penerbit');
             $table->string('tahun_terbit');
             $table->timestamps();

@@ -15,7 +15,7 @@ class CreateRekeningsTable extends Migration
     {
         Schema::create('tm_rekening', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kode_bank')->unique();
+            $table->string('kode_bank');
             $table->string('no_rekening');
             $table->string('atas_nama');
             $table->timestamps();
