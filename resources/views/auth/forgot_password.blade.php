@@ -1,4 +1,4 @@
-@extends('auth.index', ['title' => 'ReSeLL - Forgot Password'])
+@extends('auth.index', ['title' => 'reSell - Forgot Password'])
 
 @section('content')
 <div class="container">
@@ -20,6 +20,7 @@
                                         and we'll send you a link to reset your password!</p>
                                 </div>
                                 <form class="user">
+                                    @csrf
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user"
                                             id="exampleInputEmail" aria-describedby="emailHelp"

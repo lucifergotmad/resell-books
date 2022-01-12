@@ -1,4 +1,4 @@
-@extends('auth.index', ['title' => 'ReSeLL - Register'])
+@extends('auth.index', ['title' => 'reSell - Register'])
 
 @section('content')
 <div class="container">
@@ -16,7 +16,8 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                         </div>
-                        <form class="user" action="{{url('/api/register')}}" method="POST">
+                        <form class="user" action="{{url('/register')}}" method="POST">
+                            @csrf
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="text" name="first_name" class="form-control form-control-user" id="first_name"

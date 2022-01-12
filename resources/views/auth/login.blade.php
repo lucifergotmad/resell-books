@@ -1,4 +1,4 @@
-@extends('auth.index', ['title' => 'ReSeLL - Login'])
+@extends('auth.index', ['title' => 'reSell - Login'])
 
 @section('content')
 <div class="container">
@@ -17,7 +17,8 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
-                                <form class="user" action="{{url('/api/login')}}" method="POST">
+                                <form class="user" action="{{url('/login')}}" method="POST">
+                                    @csrf
                                     <div class="form-group">
                                         <input type="email" name="email_address" class="form-control form-control-user"
                                             id="email_address" aria-describedby="email_address"
