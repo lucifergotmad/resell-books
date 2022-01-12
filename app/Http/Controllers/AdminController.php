@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function __invoke()
     {
-        return view('admin.index', ['title' => 'Dashboard']);
+        return view('admin.dashboard');
 
     }
 }

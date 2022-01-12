@@ -1,4 +1,4 @@
-@extends('auth.index', ['title' => 'reSell - Login'])
+@extends('layouts.auth', ['title' => 'Login'])
 
 @section('content')
 <div class="container">
