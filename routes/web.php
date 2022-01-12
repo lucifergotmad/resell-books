@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::post('/api/login', [AuthController::class, 'login']);
-Route::post('/api/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'auth']);
+Route::post('/register', [AuthController::class, 'store']);
 
-Route::get('/login', [AuthController::class, 'loginView']);
-Route::get('/register', [AuthController::class, 'registerView']);
-Route::get('/forgot-password', [AuthController::class, 'forgotPasswordView']);
+Route::get('/login', [AuthController::class, 'login']);
+Route::get('/register', [AuthController::class, 'register']);
+Route::get('/forgot-password', [AuthController::class, 'forgot_password']);
 
 Route::get('/', AdminController::class);
