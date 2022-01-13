@@ -13,7 +13,7 @@ class RekeningController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.pages.rekening.index');
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('layouts.admin', ['title' => 'Daftar Bank'])
+@extends('layouts.admin', ['title' => 'Data Bank'])
 
 @section('content')
 
