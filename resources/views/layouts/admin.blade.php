@@ -60,7 +60,14 @@ License: For each use you must have a valid license purchased only from above li
 					<!--end::Header-->
 					<!--begin::Content-->
 					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-						@yield('content')
+
+						<div id="kt_content_container" class="container-xxl">
+
+							@yield('content')
+
+						</div>
+
+
 					</div>
 					<!--end::Content-->
 
