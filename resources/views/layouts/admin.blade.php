@@ -93,6 +93,7 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="{{ asset('js/custom/apps/chat/chat.js') }}"></script>
 		<script src="{{ asset('js/custom/modals/create-app.js') }}"></script>
 		<script src="{{ asset('js/custom/modals/upgrade-plan.js') }}"></script>
+		<script src="{{ asset('js/custom/apps/user-management/users/list/add.js') }}"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
