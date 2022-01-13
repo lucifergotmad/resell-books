@@ -1,59 +1,70 @@
 @extends('layouts.auth', ['title' => 'Login'])
 
 @section('content')
-<div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center align-items-center h-full">
-
-        <div class="col-6">
-
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                </div>
-                                <form class="user" action="{{url('/login')}}" method="POST">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input type="email" name="email_address" class="form-control form-control-user"
-                                            id="email_address" aria-describedby="email_address"
-                                            placeholder="E-mail Address" >
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" class="form-control form-control-user"
-                                            id="password" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="rememberMe">
-                                            <label class="custom-control-label" for="rememberMe">Remember
-                                                Me</label>
-                                        </div>
-                                    </div>
-                                    <input type="submit" value="Login" class="btn btn-primary btn-user btn-block">
-                                </form>
-                                <hr>
-                                <div class="text-center">
-                                    <a class="small" href="{{url('/forgot-password')}}">Forgot Password?</a>
-                                </div>
-                                <div class="text-center">
-                                    <a class="small" href="{{url('/register')}}">Create an Account!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
+				<!--begin::Content-->
+				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+					<!--begin::Logo-->
+					<a href="../../demo1/dist/index.html" class="mb-12">
+						<img alt="Logo" src="{{ asset('media/logos/logo-1.svg') }}" class="h-40px" />
+					</a>
+					<!--end::Logo-->
+					<!--begin::Wrapper-->
+					<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+						<!--begin::Form-->
+						<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="#">
+							<!--begin::Heading-->
+							<div class="text-center mb-10">
+								<!--begin::Title-->
+								<h1 class="text-dark mb-3">Sign In to reSell</h1>
+								<!--end::Title-->
+								<!--begin::Link-->
+								<div class="text-gray-400 fw-bold fs-4">New Here?
+								<a href="{{ url('/register') }}" class="link-primary fw-bolder">Create an Account</a></div>
+								<!--end::Link-->
+							</div>
+							<!--begin::Heading-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label fs-6 fw-bolder text-dark">Email</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" />
+								<!--end::Input-->
+							</div>
+							<!--end::Input group-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-10">
+								<!--begin::Wrapper-->
+								<div class="d-flex flex-stack mb-2">
+									<!--begin::Label-->
+									<label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
+									<!--end::Label-->
+									<!--begin::Link-->
+									<a href="../../demo1/dist/authentication/layouts/basic/password-reset.html" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
+									<!--end::Link-->
+								</div>
+								<!--end::Wrapper-->
+								<!--begin::Input-->
+								<input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" />
+								<!--end::Input-->
+							</div>
+							<!--end::Input group-->
+							<!--begin::Actions-->
+							<div class="text-center">
+								<!--begin::Submit button-->
+								<button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
+									<span class="indicator-label">Continue</span>
+									<span class="indicator-progress">Please wait...
+									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+								</button>
+								<!--end::Submit button-->
+							</div>
+							<!--end::Actions-->
+						</form>
+						<!--end::Form-->
+					</div>
+					<!--end::Wrapper-->
+				</div>
+				<!--end::Content-->
 @endsection
