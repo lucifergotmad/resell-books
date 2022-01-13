@@ -1,51 +1,45 @@
 @extends('layouts.auth', ['title' => 'Forgot Password'])
 
 @section('content')
-<div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center align-items-center h-full">
-
-        <div class="col-lg-6">
-
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
-                                    <p class="mb-4">We get it, stuff happens. Just enter your email address below
-                                        and we'll send you a link to reset your password!</p>
-                                </div>
-                                <form class="user">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input type="email" class="form-control form-control-user"
-                                            id="exampleInputEmail" aria-describedby="emailHelp"
-                                            placeholder="Enter Email Address...">
-                                    </div>
-                                    <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                        Reset Password
-                                    </a>
-                                </form>
-                                <hr>
-                                <div class="text-center">
-                                    <a class="small" href="{{url('/register')}}">Create an Account!</a>
-                                </div>
-                                <div class="text-center">
-                                    <a class="small" href="{{url('/login')}}">Already have an account? Login!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+    <!--begin::Logo-->
+    <a href="{{ url('/') }}" class="mb-12">
+        <img alt="Logo" src="{{ asset('media/logos/logo-1.svg') }}" class="h-40px">
+    </a>
+    <!--end::Logo-->
+    <!--begin::Wrapper-->
+    <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+        <!--begin::Form-->
+        <form class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate" id="kt_password_reset_form">
+            <!--begin::Heading-->
+            <div class="text-center mb-10">
+                <!--begin::Title-->
+                <h1 class="text-dark mb-3">Forgot Password ?</h1>
+                <!--end::Title-->
+                <!--begin::Link-->
+                <div class="text-gray-400 fw-bold fs-4">Enter your email to reset your password.</div>
+                <!--end::Link-->
             </div>
-
-        </div>
-
+            <!--begin::Heading-->
+            <!--begin::Input group-->
+            <div class="fv-row mb-10 fv-plugins-icon-container">
+                <label class="form-label fw-bolder text-gray-900 fs-6">Email</label>
+                <input class="form-control form-control-solid" type="email" placeholder="" name="email" autocomplete="off">
+            <div class="fv-plugins-message-container invalid-feedback"></div></div>
+            <!--end::Input group-->
+            <!--begin::Actions-->
+            <div class="d-flex flex-wrap justify-content-center pb-lg-0">
+                <button type="button" id="kt_password_reset_submit" class="btn btn-lg btn-primary fw-bolder me-4">
+                    <span class="indicator-label">Submit</span>
+                    <span class="indicator-progress">Please wait...
+                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                </button>
+                <a href="{{ url('/login') }}" class="btn btn-lg btn-light-primary fw-bolder">Cancel</a>
+            </div>
+            <!--end::Actions-->
+        <div></div></form>
+        <!--end::Form-->
     </div>
-
+    <!--end::Wrapper-->
 </div>
 @endsection
