@@ -9,6 +9,9 @@ class Bank extends Model
 {
     use HasFactory;
 
+    protected $table = "tm_bank";
+    protected $fillable = ['kode_bank', 'nama_bank'];
+
     public function rekening() {
         return $this->belongsTo(Rekening::class);
     }
