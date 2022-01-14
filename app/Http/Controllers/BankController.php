@@ -58,7 +58,9 @@ class BankController extends Controller
      */
     public function edit($id)
     {
-        //
+        $bank = Bank::find($id);
+
+        return view('admin.pages.bank.edit', compact('bank'));
     }
 
     /**
@@ -70,7 +72,13 @@ class BankController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_bank' => 'required',
+        ]);
+
+        Bank::find($id)->update($request->all());
+
+        return redirect()->route('bank.index')->with('success', 'Bank berhasil diupdate!');
     }
 
     /**
