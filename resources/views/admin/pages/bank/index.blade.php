@@ -26,7 +26,7 @@
                 <!--begin::Card-->
                 <div class="card">
                     <!--begin::Card header-->
-                    <div class="card-header border-0 pt-6">
+                    <div class="card-header border-0 pt-6 mb-10">
                         <!--begin::Card title-->
                         <div class="card-title">
                             <!--begin::Search-->
@@ -49,33 +49,54 @@
                             <!--end::Search-->
                         </div>
                         <!--begin::Card title-->
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar">
-                            <!--begin::Toolbar-->
-                            <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                                <!--begin::Add user-->
-                                <a href="/bank/create">
-                                    <button type="button" class="btn btn-primary">
-                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-                                        <span class="svg-icon svg-icon-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none">
-                                                <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
-                                                    transform="rotate(-90 11.364 20.364)" fill="black"></rect>
-                                                <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black">
-                                                </rect>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->Tambah Data Bank
-                                    </button>
-                                </a>
-                                <!--end::Add user-->
-                            </div>
-                            <!--end::Toolbar-->
-                        </div>
-                        <!--end::Card toolbar-->
                     </div>
                     <!--end::Card header-->
+                    <div class="post d-flex flex-column-fluid" id="kt_post">
+                        <div id="kt_content_container" class="container-xxl">
+                            <form action="/bank" method="POST">
+                                <div class="row px-4">
+                                    <div class="col-lg-6">
+                                        <div class="mb-10">
+                                            <label for="exampleFormControlInput1" class="required form-label">Kode
+                                                Bank</label>
+                                            <input type="text" class="form-control" placeholder="BCA" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-10">
+                                            <label for="exampleFormControlInput1" class="required form-label">Nama
+                                                Bank</label>
+                                            <input type="text" class="form-control" placeholder="Bank Central Asia" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row px-4">
+                                    <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+                                        <!--begin::Add user-->
+                                        <a href="/bank/create">
+                                            <button type="button" class="btn btn-primary">
+                                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+                                                <span class="svg-icon svg-icon-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2"
+                                                            rx="1" transform="rotate(-90 11.364 20.364)" fill="black">
+                                                        </rect>
+                                                        <rect x="4.36396" y="11.364" width="16" height="2" rx="1"
+                                                            fill="black">
+                                                        </rect>
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->Tambah Data Bank
+                                            </button>
+                                        </a>
+                                        <!--end::Add user-->
+                                    </div>
+                                    <!--end::Toolbar-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <!--begin::Card body-->
                     <div class="card-body pt-2>
                         <!--begin::Table-->
