@@ -69,7 +69,7 @@
                                         </svg>
                                     </span>
                                     <input type="text" name="keyword" class="form-control form-control-solid w-350px ps-14"
-                                        placeholder="Cari data bank">
+                                        placeholder="Cari data bank" value="{{ request('keyword') }}">
                                     <button type="submit" class="btn btn-secondary">Cari</button>
                             </form>
                         </div>
@@ -144,6 +144,7 @@
                                                 <td>{{ $bank->kode_bank }}</td>
                                                 <td>{{ $bank->nama_bank }}</td>
                                                 <td class="text-end">
+                                                    <form action="{{ route('bank.destroy', $bank->id) }}"></form>
                                                     <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
                                                         data-kt-menu-trigger="click"
                                                         data-kt-menu-placement="bottom-end">Actions
@@ -160,12 +161,14 @@
                                                         data-kt-menu="true">
                                                         <div class="menu-item px-3">
                                                             <a href="{{ route('bank.edit', $bank->id) }}"
-                                                                class="menu-link px-3">Edit</a>
+                                                                class="menu-link px-3">
+                                                                Edit</a>
                                                         </div>
                                                         <div class="menu-item px-3">
-                                                            <a href="{{ route('bank.destroy', $bank->id) }}"
-                                                                class="menu-link px-3">
-                                                                Delete</a>
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit"
+                                                                class="btn btn-sm btn-white menu-link px-3">Hapus</button>
                                                         </div>
                                                     </div>
                                                 </td>

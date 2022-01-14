@@ -12,12 +12,13 @@ class BankController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $banks = Bank::orderBy('updated_at', 'desc')->paginate(8);
 
-        if (request('keyword')) {
-            $banks->where('kode_bank', 'like', '%' . request('keyword') . '%');
+        if ($request->keyword) {
+            $banks = Bank::where('kode_bank', 'LIKE', '%' . $request->keyword . '%')->get();
+        } else {
+            $banks = Bank::limit(5)->get();
         }
 
         return view('admin.pages.bank.index', ['banks' => $banks]);
