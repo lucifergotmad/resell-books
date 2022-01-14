@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\RekeningController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,4 @@ Route::resources([
     'banks' => BankController::class,
     'rekening' => RekeningController::class
 ]);
+Route::get('/keuangan', KeuanganController::class);
