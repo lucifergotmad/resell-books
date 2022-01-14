@@ -54,18 +54,21 @@
                             <!--begin::Toolbar-->
                             <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                 <!--begin::Add user-->
-                                <button type="button" class="btn btn-primary">
-                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-                                    <span class="svg-icon svg-icon-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                            fill="none">
-                                            <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
-                                                transform="rotate(-90 11.364 20.364)" fill="black"></rect>
-                                            <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black"></rect>
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->Tambah Data Bank
-                                </button>
+                                <a href="/bank/create">
+                                    <button type="button" class="btn btn-primary">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+                                        <span class="svg-icon svg-icon-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
+                                                    transform="rotate(-90 11.364 20.364)" fill="black"></rect>
+                                                <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black">
+                                                </rect>
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon-->Tambah Data Bank
+                                    </button>
+                                </a>
                                 <!--end::Add user-->
                             </div>
                             <!--end::Toolbar-->
@@ -132,8 +135,8 @@
                                                     <!--end::Menu item-->
                                                     <!--begin::Menu item-->
                                                     <div class="menu-item px-3">
-                                                        <a href="/bank/{{ $bank->id }}" class="menu-link px-3"
-                                                            data-kt-users-table-filter="delete_row">Delete</a>
+                                                        <a href="/bank/{{ $bank->id }}/delete"
+                                                            class="menu-link px-3">Delete</a>
                                                     </div>
                                                     <!--end::Menu item-->
                                                 </div>
