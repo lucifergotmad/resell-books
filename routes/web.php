@@ -27,11 +27,14 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::get('/forgot-password', [AuthController::class, 'forgot_password']);
 
 Route::get('/', AdminController::class);
-Route::resources([
-    'buku' => BukuController::class,
-    'bank' => BankController::class,
-    'rekening' => RekeningController::class,
-], [
-    'except' => ['create'],
-]);
+Route::resources(
+    [
+        'buku' => BukuController::class,
+        'bank' => BankController::class,
+        'rekening' => RekeningController::class,
+    ],
+    [
+        'except' => ['create', 'show'],
+    ]
+);
 Route::get('/keuangan', KeuanganController::class);

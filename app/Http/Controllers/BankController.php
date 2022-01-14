@@ -14,8 +14,13 @@ class BankController extends Controller
      */
     public function index()
     {
-        $banks = Bank::all();
-        return view('admin.pages.bank.index', compact('banks'));
+        $banks = Bank::orderBy('updated_at', 'desc')->paginate(8);
+
+        if (request('keyword')) {
+            $banks->where('kode_bank', 'like', '%' . request('keyword') . '%');
+        }
+
+        return view('admin.pages.bank.index', ['banks' => $banks]);
     }
 
     /**
@@ -92,8 +97,6 @@ class BankController extends Controller
         $bank = Bank::find($id);
         $bank->delete();
 
-        if ($bank) {
-
-        }
+        return redirect()->route('bank.index')->with('success', 'Bank berhasil dihapus!');
     }
 }
