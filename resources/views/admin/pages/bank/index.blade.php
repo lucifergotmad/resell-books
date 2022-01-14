@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <div class="toolbar" id="kt_toolbar">
+        <div class="toolbar py-12" id="kt_toolbar">
             <div id="kt_toolbar_container" class="container d-flex flex-stack">
                 <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
                     data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
@@ -37,7 +37,7 @@
 
                         <div class="d-flex flex-column pe-0 pe-sm-10">
                             <h4 class="fw-bold">Berhasil!</h4>
-                            <span>Data bank telah berhasil ditambahkan!.</span>
+                            <span>{{ Session::get('success') }}</span>
                         </div>
 
                         <button type="button"
@@ -136,15 +136,13 @@
                                     </thead>
                                     <tbody class="text-gray-600 fw-bold">
                                         @foreach ($banks as $index => $bank)
-
                                             <tr class={{ ($index + 1) % 2 ? 'odd' : 'even' }}>
                                                 <td>
                                                     {{ $index + 1 }}
                                                 </td>
                                                 <td>{{ $bank->kode_bank }}</td>
                                                 <td>{{ $bank->nama_bank }}</td>
-                                                <td class="text-end">
-                                                    <form action="{{ route('bank.destroy', $bank->id) }}"></form>
+                                                <td class="text-center">
                                                     <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
                                                         data-kt-menu-trigger="click"
                                                         data-kt-menu-placement="bottom-end">Actions
@@ -165,25 +163,26 @@
                                                                 Edit</a>
                                                         </div>
                                                         <div class="menu-item px-3">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit"
+                                                            <button type="button"
                                                                 class="btn btn-sm btn-white menu-link px-3"
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#kt_modal_1">Hapus</button>
                                                         </div>
+                                                    </div>
 
-                                                        <div class="modal fade" tabindex="-1" id="kt_modal_1">
+                                                    <div class="modal fade text-start" tabindex="-1" id="kt_modal_1">
+                                                        <form action="{{ route('bank.destroy', $bank->id) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
                                                                         <h5 class="modal-title">Konfirmasi Hapus</h5>
-                                                                        <!--begin::Close-->
                                                                         <div class="btn btn-icon btn-sm btn-active-light-primary ms-2"
                                                                             data-bs-dismiss="modal" aria-label="Close">
                                                                             <span class="svg-icon svg-icon-2x"></span>
                                                                         </div>
-                                                                        <!--end::Close-->
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <p>Apakah anda yakin menghapus data ini?</p>
@@ -191,14 +190,12 @@
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-light"
                                                                             data-bs-dismiss="modal">Batal</button>
-                                                                        <button type="button" class="btn btn-danger">Ya,
+                                                                        <button type="submit" class="btn btn-danger">Ya,
                                                                             Hapus</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-
-
+                                                        </form>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -207,6 +204,7 @@
                                 </table>
                             </div>
                         </div>
+
                     @else
                         <div class="d-flex flex-column flex-column-fluid text-center p-6 py-lg-10">
                             <div class="d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-350px"
@@ -222,6 +220,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection

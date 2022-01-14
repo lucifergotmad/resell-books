@@ -18,7 +18,7 @@ class BankController extends Controller
         if ($request->keyword) {
             $banks = Bank::where('kode_bank', 'LIKE', '%' . $request->keyword . '%')->get();
         } else {
-            $banks = Bank::limit(5)->get();
+            $banks = Bank::orderBy('updated_at', 'desc')->limit(10)->get();
         }
 
         return view('admin.pages.bank.index', ['banks' => $banks]);
