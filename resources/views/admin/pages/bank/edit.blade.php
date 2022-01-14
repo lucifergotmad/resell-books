@@ -27,8 +27,9 @@
                 <div class="card py-10">
                     <div class="post d-flex flex-column-fluid" id="kt_post">
                         <div id="kt_content_container" class="container-xxl">
-                            <form action="{{ route('bank.update', $bank->id) }}" method="PUT">
+                            <form action="{{ route('bank.update', $bank->id) }}" method="POST">
                                 @csrf
+                                @method('PUT')
                                 <div class="row px-4">
                                     <div class="col-lg-6">
                                         <div class="mb-10">
