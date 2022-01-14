@@ -32,7 +32,7 @@ Route::resources([
     'bank' => BankController::class,
     'rekening' => RekeningController::class
 ], [
-    'except' => ['destroy']
+    'except' => ['destroy', 'create']
 ]);
 Route::get('/bank/{id}/delete', [BankController::class, 'destroy']);
 Route::get('/keuangan', KeuanganController::class);
