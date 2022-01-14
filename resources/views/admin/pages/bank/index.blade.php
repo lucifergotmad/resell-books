@@ -168,8 +168,37 @@
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"
-                                                                class="btn btn-sm btn-white menu-link px-3">Hapus</button>
+                                                                class="btn btn-sm btn-white menu-link px-3"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#kt_modal_1">Hapus</button>
                                                         </div>
+
+                                                        <div class="modal fade" tabindex="-1" id="kt_modal_1">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Konfirmasi Hapus</h5>
+                                                                        <!--begin::Close-->
+                                                                        <div class="btn btn-icon btn-sm btn-active-light-primary ms-2"
+                                                                            data-bs-dismiss="modal" aria-label="Close">
+                                                                            <span class="svg-icon svg-icon-2x"></span>
+                                                                        </div>
+                                                                        <!--end::Close-->
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>Apakah anda yakin menghapus data ini?</p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-light"
+                                                                            data-bs-dismiss="modal">Batal</button>
+                                                                        <button type="button" class="btn btn-danger">Ya,
+                                                                            Hapus</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
                                                     </div>
                                                 </td>
                                             </tr>
