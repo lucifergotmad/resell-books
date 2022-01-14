@@ -18,16 +18,6 @@ class BankController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('admin.pages.bank.create');
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -35,7 +25,7 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate();
     }
 
     /**
