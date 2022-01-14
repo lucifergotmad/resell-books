@@ -80,6 +80,11 @@ class BankController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bank = Bank::find($id);
+        $bank->delete();
+
+        if($bank) {
+            
+        }
     }
 }
