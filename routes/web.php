@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\RekeningController;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +28,8 @@ Route::get('/forgot-password', [AuthController::class, 'forgot_password']);
 
 Route::get('/', AdminController::class);
 Route::resources([
-    'banks' => BankController::class,
+    'buku' => BukuController::class,
+    'bank' => BankController::class,
     'rekening' => RekeningController::class
 ]);
 Route::get('/keuangan', KeuanganController::class);
