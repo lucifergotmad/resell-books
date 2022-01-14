@@ -30,9 +30,8 @@ Route::get('/', AdminController::class);
 Route::resources([
     'buku' => BukuController::class,
     'bank' => BankController::class,
-    'rekening' => RekeningController::class
+    'rekening' => RekeningController::class,
 ], [
-    'except' => ['destroy', 'create']
+    'except' => ['create'],
 ]);
-Route::get('/bank/{id}/delete', [BankController::class, 'destroy']);
 Route::get('/keuangan', KeuanganController::class);
