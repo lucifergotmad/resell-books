@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
         <!--begin::Toolbar-->
         <div class="toolbar" id="kt_toolbar">
             <!--begin::Container-->
@@ -21,8 +22,75 @@
         <!--end::Toolbar-->
         <!--begin::Post-->
         <div class="post d-flex flex-column-fluid" id="kt_post">
+
             <!--begin::Container-->
             <div id="kt_content_container" class="container-xxl">
+
+                @if ($errors->any())
+                    <!--begin::Alert-->
+                    <div class="container py-8 alert alert-danger">
+                        <!--begin::Wrapper-->
+                        <div class="d-flex flex-column">
+                            <!--begin::Title-->
+                            <h4 class="mb-4 text-dark">Oops, ada masalah!</h4>
+                            <!--end::Title-->
+                            <!--begin::Content-->
+                            @foreach ($errors->all() as $error)
+                                <span class="mb-2">{{ $error }}</span>
+                            @endforeach
+
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Alert-->
+                @endif
+
+
+
+                @if (Session::get('success'))
+                    <div class="alert alert-dismissible bg-light-success d-flex flex-column flex-sm-row p-5 mb-10">
+                        <!--begin::Icon-->
+                        <span class="svg-icon svg-icon-2hx svg-icon-primary me-4 mb-5 mb-sm-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M9.89557 13.4982L7.79487 11.2651C7.26967 10.7068 6.38251 10.7068 5.85731 11.2651C5.37559 11.7772 5.37559 12.5757 5.85731 13.0878L9.74989 17.2257C10.1448 17.6455 10.8118 17.6455 11.2066 17.2257L18.1427 9.85252C18.6244 9.34044 18.6244 8.54191 18.1427 8.02984C17.6175 7.47154 16.7303 7.47154 16.2051 8.02984L11.061 13.4982C10.7451 13.834 10.2115 13.834 9.89557 13.4982Z"
+                                    fill="black" />
+                            </svg>
+                        </span>
+                        <!--end::Icon-->
+
+                        <!--begin::Wrapper-->
+                        <div class="d-flex flex-column pe-0 pe-sm-10">
+                            <!--begin::Title-->
+                            <h4 class="fw-bold">This is an alert</h4>
+                            <!--end::Title-->
+                            <!--begin::Content-->
+                            <span>The alert component can be used to highlight certain parts of your page for higher content
+                                visibility.</span>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Wrapper-->
+
+                        <!--begin::Close-->
+                        <button type="button"
+                            class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto"
+                            data-bs-dismiss="alert">
+                            <span class="svg-icon svg-icon-1 svg-icon-primary"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                        transform="rotate(-45 6 17.3137)" fill="black" />
+                                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)"
+                                        fill="black" />
+                                </svg></span>
+                        </button>
+                        <!--end::Close-->
+                    </div>
+                @endif
+
+
+
+                <!--end::Alert-->
                 <!--begin::Card-->
                 <div class="card">
                     <!--begin::Card header-->
@@ -53,46 +121,42 @@
                     <!--end::Card header-->
                     <div class="post d-flex flex-column-fluid" id="kt_post">
                         <div id="kt_content_container" class="container-xxl">
-                            <form action="/bank" method="POST">
+                            <form action="{{ route('bank.store') }}" method="POST">
+                                @csrf
                                 <div class="row px-4">
                                     <div class="col-lg-6">
                                         <div class="mb-10">
-                                            <label for="exampleFormControlInput1" class="required form-label">Kode
+                                            <label for="kode_bank" class="required form-label">Kode
                                                 Bank</label>
-                                            <input type="text" class="form-control" placeholder="BCA" />
+                                            <input id="kode_bank" type="text" name="kode_bank" class="form-control"
+                                                placeholder="BCA" autocomplete="false" />
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="mb-10">
-                                            <label for="exampleFormControlInput1" class="required form-label">Nama
+                                            <label for="nama_bank" class="required form-label">Nama
                                                 Bank</label>
-                                            <input type="text" class="form-control" placeholder="Bank Central Asia" />
+                                            <input id="nama_bank" type="text" name="nama_bank" class="form-control"
+                                                placeholder="Bank Central Asia" autocomplete="false" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row px-4">
-                                    <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                                        <!--begin::Add user-->
-                                        <a href="/bank/create">
-                                            <button type="button" class="btn btn-primary">
-                                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-                                                <span class="svg-icon svg-icon-2">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none">
-                                                        <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2"
-                                                            rx="1" transform="rotate(-90 11.364 20.364)" fill="black">
-                                                        </rect>
-                                                        <rect x="4.36396" y="11.364" width="16" height="2" rx="1"
-                                                            fill="black">
-                                                        </rect>
-                                                    </svg>
-                                                </span>
-                                                <!--end::Svg Icon-->Tambah Data Bank
-                                            </button>
-                                        </a>
-                                        <!--end::Add user-->
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary">
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none">
+                                                    <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
+                                                        transform="rotate(-90 11.364 20.364)" fill="black">
+                                                    </rect>
+                                                    <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black">
+                                                    </rect>
+                                                </svg>
+                                            </span>
+                                            Tambah Data Bank
+                                        </button>
                                     </div>
-                                    <!--end::Toolbar-->
                                 </div>
                             </form>
                         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bank;
 use Illuminate\Http\Request;
+
 class BankController extends Controller
 {
     /**
@@ -12,7 +13,7 @@ class BankController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {  
+    {
         $banks = Bank::all();
         return view('admin.pages.bank.index', compact('banks'));
     }
@@ -25,7 +26,17 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate();
+        $request->validate([
+            'kode_bank' => 'required|unique:tm_bank|max:8',
+            'nama_bank' => 'required',
+        ]);
+
+        Bank::create([
+            'kode_bank' => $request->kode_bank,
+            'nama_bank' => $request->nama_bank,
+        ]);
+
+        return redirect()->route('bank.index')->with('success', 'Bank berhasil ditambahkan!');
     }
 
     /**
@@ -73,8 +84,8 @@ class BankController extends Controller
         $bank = Bank::find($id);
         $bank->delete();
 
-        if($bank) {
-            
+        if ($bank) {
+
         }
     }
 }
