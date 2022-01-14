@@ -3,7 +3,7 @@
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="toolbar" id="kt_toolbar">
-            <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+            <div id="kt_toolbar_container" class="container d-flex flex-stack">
                 <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
                     data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                     class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
@@ -157,11 +157,11 @@
                                                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
                                                             data-kt-menu="true">
                                                             <div class="menu-item px-3">
-                                                                <a href="/bank/{{ $bank->id }}/edit"
+                                                                <a href="{{ route('bank.edit', $bank->id) }}"
                                                                     class="menu-link px-3">Edit</a>
                                                             </div>
                                                             <div class="menu-item px-3">
-                                                                <a href="/bank/{{ $bank->id }}/delete"
+                                                                <a href="{{ route('bank.destroy', $bank->id) }}"
                                                                     class="menu-link px-3">Delete</a>
                                                             </div>
                                                         </div>
@@ -184,7 +184,6 @@
                                 </div>
                             </div>
                         @endif
-
                     </div>
                 </div>
             </div>
