@@ -31,5 +31,7 @@ Route::resources([
     'buku' => BukuController::class,
     'bank' => BankController::class,
     'rekening' => RekeningController::class
+], [
+    'except' => ['destroy']
 ]);
 Route::get('/keuangan', KeuanganController::class);
