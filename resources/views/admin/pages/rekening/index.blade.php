@@ -69,7 +69,7 @@
                     <!--begin::Card header-->
                     <div class="card-header border-0 pt-6">
                         <!--begin::Card title-->
-                        <div style="min-width: 100%" class="card-title">
+                        <div class="card-title container">
                             <form action="{{ route('rekening.index') }}">
                                 <!--begin::Search-->
                                 <div class="d-flex align-items-center position-relative my-6">
@@ -157,7 +157,7 @@
                         <!--end::Search-->
                     </div>
                     <div class="post d-flex flex-column-fluid" id="kt_post">
-                        <div id="kt_content_container" class="container-xxl">
+                        <div id="kt_content_container" class="container-xxl my-10">
                             <form action="{{ route('rekening.store') }}" method="POST">
                                 @csrf
                                 <div class="row px-4">
@@ -172,8 +172,7 @@
                                                 aria-hidden="true">
                                                 <option data-select2-id="select2-data-12-ix32"></option>
                                                 @forelse ($banks as $index => $bank)
-                                                    <option value="{{ $bank->kode_bank }}"
-                                                        selected={{ $index ? 'true' : 'false' }}>
+                                                    <option value="{{ $bank->kode_bank }}">
                                                         {{ $bank->kode_bank }} -
                                                         {{ $bank->nama_bank }}</option>
                                                 @empty
@@ -338,7 +337,5 @@
             <!--end::Card-->
         </div>
         <!--end::Container-->
-    </div>
-    <!--end::Post-->
     </div>
 @endsection
