@@ -80,9 +80,10 @@ class RekeningController extends Controller
      */
     public function edit($id)
     {
+        $banks = Bank::all();
         $rekening = Rekening::find($id);
 
-        return view('admin.pages.rekening.edit', compact('rekening'));
+        return view('admin.pages.rekening.edit', compact('rekening', 'banks'));
     }
 
     /**
