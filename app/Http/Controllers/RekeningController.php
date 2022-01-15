@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bank;
 use Illuminate\Http\Request;
 
 class RekeningController extends Controller
@@ -13,7 +14,8 @@ class RekeningController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.rekening.index');
+        $banks = Bank::all();
+        return view('admin.pages.rekening.index', ['banks' => $banks]);
     }
 
     /**
