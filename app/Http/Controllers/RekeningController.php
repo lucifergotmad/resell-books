@@ -16,14 +16,15 @@ class RekeningController extends Controller
     public function index(Request $request)
     {
         $banks = Bank::all();
-        $rekenings = Rekening::all();
 
         if ($request->keyword || $request->kode_bank) {
-            $rekenings
-                ->where('atas_nama', 'LIKE', '%' . $request->keyword . '%')
-                ->orWhere('kode_bank', $request->kode_bank)
-                ->get();
+
+            $rekenings = Rekening::where('atas_nama', 'LIKE', '%' . $request->keyword . '%')->orWhere('kode_bank', $request->kode_bank)->get();
+
+        } else {
+            $rekenings = Rekening::orderBy('updated_at', 'desc')->limit(10)->get();
         }
+
         return view('admin.pages.rekening.index', ['banks' => $banks, 'rekenings' => $rekenings]);
     }
 
@@ -45,7 +46,19 @@ class RekeningController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kode_bank' => 'required',
+            'no_rekening' => 'required|min:10|max:16',
+            'atas_nama' => 'required',
+        ]);
+
+        Rekening::create([
+            'kode_bank' => $request->kode_bank,
+            'no_rekening' => $request->no_rekening,
+            'atas_nama' => $request->atas_nama,
+        ]);
+
+        return redirect()->route('rekening.index')->with('success', 'Rekening berhasil ditambahkan!');
     }
 
     /**

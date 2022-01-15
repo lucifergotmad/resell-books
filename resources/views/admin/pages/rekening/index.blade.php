@@ -74,7 +74,6 @@
                                             class="form-control form-control-solid w-250px ps-14"
                                             placeholder="Cari data rekening" value="{{ request('keyword') }}">
 
-                                        <button type="submit" class="btn btn-primary">Cari</button>
                                     </div>
 
 
@@ -108,10 +107,9 @@
                                                     data-allow-clear="true" data-kt-user-table-filter="role"
                                                     data-hide-search="true" data-select2-id="select2-data-10-oj63"
                                                     tabindex="-1" aria-hidden="true">
-                                                    <option data-select2-id="select2-data-12-ix32"></option>
-                                                    @forelse ($banks as $index => $bank)
-                                                        <option value="{{ $bank->kode_bank }}"
-                                                            selected={{ $index ? 'true' : 'false' }}>
+                                                    <option data-select2-id="select2-data-12-ix32" value=""></option>
+                                                    @forelse ($banks as $bank)
+                                                        <option value="{{ $bank->kode_bank }}">
                                                             {{ $bank->kode_bank }} -
                                                             {{ $bank->nama_bank }}</option>
                                                     @empty
@@ -238,7 +236,7 @@
                                                 <td>
                                                     {{ $index + 1 }}
                                                 </td>
-                                                <td>{{ $rekening->bank->kode_bank }}</td>
+                                                <td>{{ $rekening->kode_bank }}</td>
                                                 <td>{{ $rekening->no_rekening }}</td>
                                                 <td>{{ $rekening->atas_nama }}</td>
                                                 <td class="text-end">
