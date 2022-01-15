@@ -95,8 +95,7 @@ class BankController extends Controller
      */
     public function destroy($id)
     {
-        $bank = Bank::find($id);
-        $bank->delete();
+        Bank::find($id)->delete();
 
         return redirect()->route('bank.index')->with('success', 'Bank berhasil dihapus!');
     }

@@ -114,6 +114,8 @@ class RekeningController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Rekening::find($id)->delete();
+
+        return redirect()->route('rekening.index')->with('success', 'Rekening berhasil dihapus');
     }
 }
