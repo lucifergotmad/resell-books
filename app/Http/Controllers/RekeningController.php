@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bank;
+use App\Models\Rekening;
 use Illuminate\Http\Request;
 
 class RekeningController extends Controller
@@ -12,10 +13,18 @@ class RekeningController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $banks = Bank::all();
-        return view('admin.pages.rekening.index', ['banks' => $banks]);
+        $rekenings = Rekening::all();
+
+        if ($request->keyword || $request->kode_bank) {
+            $rekenings
+                ->where('atas_nama', 'LIKE', '%' . $request->keyword . '%')
+                ->orWhere('kode_bank', $request->kode_bank)
+                ->get();
+        }
+        return view('admin.pages.rekening.index', ['banks' => $banks, 'rekenings' => $rekenings]);
     }
 
     /**
