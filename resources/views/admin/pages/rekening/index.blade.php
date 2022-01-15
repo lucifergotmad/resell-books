@@ -163,7 +163,7 @@
                                         <div class="mb-10">
                                             <label for="no_rekening" class="required form-label">No Rekening</label>
                                             <input id="no_rekening" minlength="10" maxlength="16" type="text"
-                                                name="no_rekening" class="form-control" placeholder="BCA"
+                                                name="no_rekening" class="form-control" placeholder="3761122612"
                                                 autocomplete="false" />
                                         </div>
                                     </div>
@@ -171,7 +171,7 @@
                                         <div class="mb-10">
                                             <label for="atas_nama" class="required form-label">Atas Nama</label>
                                             <input id="atas_nama" type="text" name="atas_nama" class="form-control"
-                                                placeholder="Bank Central Asia" autocomplete="false" />
+                                                placeholder="Octyo Paswa Putra" autocomplete="false" />
                                         </div>
                                     </div>
                                 </div>
