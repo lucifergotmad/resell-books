@@ -2,26 +2,16 @@
 
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <!--begin::Toolbar-->
         <div class="toolbar" id="kt_toolbar">
-            <!--begin::Container-->
             <div id="kt_toolbar_container" class="container d-flex flex-stack">
-                <!--begin::Page title-->
                 <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
                     data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                     class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-                    <!--begin::Title-->
                     <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Daftar Rekening</h1>
-                    <!--end::Title-->
                 </div>
-                <!--end::Page title-->
             </div>
-            <!--end::Container-->
         </div>
-        <!--end::Toolbar-->
-        <!--begin::Post-->
         <div class="post d-flex flex-column-fluid" id="kt_post">
-            <!--begin::Container-->
             <div id="kt_content_container" class="container-xxl">
                 @if ($errors->any())
                     <div class="container py-8 alert alert-danger">
@@ -36,7 +26,6 @@
 
                 @if (Session::get('success'))
                     <div class="alert alert-dismissible bg-light-success d-flex flex-column flex-sm-row p-5 mb-10">
-                        <!--begin::Icon-->
                         <span class="svg-icon svg-icon-2hx svg-icon-primary me-4 mb-5 mb-sm-0">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path
@@ -64,39 +53,36 @@
                     </div>
                 @endif
 
-                <!--begin::Card-->
                 <div class="card">
-                    <!--begin::Card header-->
                     <div class="card-header border-0 pt-6">
-                        <!--begin::Card title-->
                         <div class="card-title container">
-                            <form action="{{ route('rekening.index') }}">
-                                <!--begin::Search-->
-                                <div class="d-flex align-items-center position-relative my-6">
+                            <form action="{{ route('rekening.index') }}" style="width: 100%">
+                                <div class="d-flex align-items-center justify-content-between position-relative my-6">
 
-                                    <span class="svg-icon svg-icon-1 position-absolute ms-6">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                            fill="none">
-                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1"
-                                                transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
-                                            <path
-                                                d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
-                                                fill="black"></path>
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                    <input type="text" name="keyword" data-kt-user-table-filter="search"
-                                        class="form-control form-control-solid w-250px ps-14"
-                                        placeholder="Cari data rekening" value="{{ request('keyword') }}">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                    <div class="d-flex align-items-center justify-content-start">
+                                        <span class="svg-icon svg-icon-1 position-absolute ms-6">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2"
+                                                    rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                                <path
+                                                    d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                                    fill="black"></path>
+                                            </svg>
+                                        </span>
+                                        <input type="text" name="keyword" data-kt-user-table-filter="search"
+                                            class="form-control form-control-solid w-250px ps-14"
+                                            placeholder="Cari data rekening" value="{{ request('keyword') }}">
 
-                                    <button type="submit" class="btn btn-secondary mr-auto">Cari</button>
-
+                                        <button type="submit" class="btn btn-primary">Cari</button>
+                                    </div>
 
 
-                                    <button type="button" class="btn btn-light-primary ml-auto" data-kt-menu-trigger="click"
+
+
+
+                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click"
                                         data-kt-menu-placement="bottom-end">
-                                        <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
                                         <span class="svg-icon svg-icon-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none">
@@ -105,22 +91,15 @@
                                                     fill="black"></path>
                                             </svg>
                                         </span>
-                                        <!--end::Svg Icon-->
                                         Filter
                                     </button>
 
                                     <div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true">
-                                        <!--begin::Header-->
                                         <div class="px-7 py-5">
                                             <div class="fs-5 text-dark fw-bolder">Filter Options</div>
                                         </div>
-                                        <!--end::Header-->
-                                        <!--begin::Separator-->
                                         <div class="separator border-gray-200"></div>
-                                        <!--end::Separator-->
-                                        <!--begin::Content-->
                                         <div class="px-7 py-5" data-kt-user-table-filter="form">
-                                            <!--begin::Input group-->
                                             <div class="mb-10">
                                                 <label class="form-label fs-6 fw-bold">Bank:</label>
                                                 <select name="kode_bank"
@@ -140,8 +119,6 @@
                                                     @endforelse
                                                 </select>
                                             </div>
-                                            <!--end::Input group-->
-                                            <!--begin::Actions-->
                                             <div class="d-flex justify-content-end">
                                                 <button type="reset"
                                                     class="btn btn-light btn-active-light-primary fw-bold me-2 px-6"
@@ -156,7 +133,6 @@
                             </form>
 
                         </div>
-                        <!--end::Search-->
                     </div>
                     <div class="post d-flex flex-column-fluid" id="kt_post">
                         <div id="kt_content_container" class="container-xxl my-10">
@@ -201,20 +177,37 @@
                                 </div>
                                 <div class="row px-4">
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary"
-                                            disabled={{ $banks->count() ? 'true' : 'false' }}>
-                                            <span class="svg-icon svg-icon-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none">
-                                                    <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
-                                                        transform="rotate(-90 11.364 20.364)" fill="black">
-                                                    </rect>
-                                                    <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black">
-                                                    </rect>
-                                                </svg>
-                                            </span>
-                                            Tambah Data Rekening
-                                        </button>
+                                        @if ($banks->count())
+                                            <button type="submit" class="btn btn-primary">
+                                                <span class=" svg-icon svg-icon-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2"
+                                                            rx="1" transform="rotate(-90 11.364 20.364)" fill="black">
+                                                        </rect>
+                                                        <rect x="4.36396" y="11.364" width="16" height="2" rx="1"
+                                                            fill="black">
+                                                        </rect>
+                                                    </svg>
+                                                </span>
+                                                Tambah Data Rekening
+                                            </button>
+                                        @else
+                                            <button type="submit" class="btn btn-primary" disabled>
+                                                <span class=" svg-icon svg-icon-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2"
+                                                            rx="1" transform="rotate(-90 11.364 20.364)" fill="black">
+                                                        </rect>
+                                                        <rect x="4.36396" y="11.364" width="16" height="2" rx="1"
+                                                            fill="black">
+                                                        </rect>
+                                                    </svg>
+                                                </span>
+                                                Tambah Data Rekening
+                                            </button>
+                                        @endif
                                     </div>
                                 </div>
                             </form>
@@ -222,122 +215,107 @@
                     </div>
                 </div>
                 <div class="card-body pt-2">
-                    <div id="kt_table_users_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                        <div class="table-responsive">
-                            <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer"
-                                id="kt_table_users">
-                                <!--begin::Table head-->
-                                <thead>
-                                    <!--begin::Table row-->
-                                    <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
-                                        <th>
-                                            No
-                                        </th>
-                                        <th>Kode Bank</th>
-                                        <th>No Rekening</th>
-                                        <th>Atas Nama</th>
-                                        <th></th>
+                    @if ($rekenings->count())
+                        <div id="kt_table_users_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                            <div class="table-responsive">
+                                <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer"
+                                    id="kt_table_users">
+                                    <thead>
+                                        <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
+                                            <th>
+                                                No
+                                            </th>
+                                            <th>Kode Bank</th>
+                                            <th>No Rekening</th>
+                                            <th>Atas Nama</th>
+                                            <th></th>
 
-                                    </tr>
-                                    <!--end::Table row-->
-                                </thead>
-                                <!--end::Table head-->
-                                <!--begin::Table body-->
-                                <tbody class="text-gray-600 fw-bold">
-                                    <tr class="odd">
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>BCA</td>
-                                        <td>32056000723</td>
-                                        <td>Octyo Paswa Putra</td>
-                                        <!--begin::Action=-->
-                                        <td class="text-end">
-                                            <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
-                                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                                <span class="svg-icon svg-icon-5 m-0">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none">
-                                                        <path
-                                                            d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
-                                                            fill="black"></path>
-                                                    </svg>
-                                                </span>
-                                                <!--end::Svg Icon-->
-                                            </a>
-                                            <!--begin::Menu-->
-                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
-                                                data-kt-menu="true">
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo1/dist/apps/user-management/users/view.html"
-                                                        class="menu-link px-3">Edit</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3"
-                                                        data-kt-users-table-filter="delete_row">Delete</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                            </div>
-                                            <!--end::Menu-->
-                                        </td>
-                                        <!--end::Action=-->
-                                    </tr>
-                                    <tr class="even">
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>BRI</td>
-                                        <td>32056000321</td>
-                                        <td>Nur Amanah</td>
-                                        <!--begin::Action=-->
-                                        <td class="text-end">
-                                            <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
-                                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                                <span class="svg-icon svg-icon-5 m-0">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none">
-                                                        <path
-                                                            d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
-                                                            fill="black"></path>
-                                                    </svg>
-                                                </span>
-                                                <!--end::Svg Icon-->
-                                            </a>
-                                            <!--begin::Menu-->
-                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
-                                                data-kt-menu="true">
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="/banks/1/edit" class="menu-link px-3">Edit</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3"
-                                                        data-kt-users-table-filter="delete_row">Delete</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                            </div>
-                                            <!--end::Menu-->
-                                        </td>
-                                        <!--end::Action=-->
-                                    </tr>
-                                </tbody>
-                                <!--end::Table body-->
-                            </table>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-gray-600 fw-bold">
+                                        @foreach ($rekenings as $index => $rekening)
+                                            <tr class={{ ($index + 1) % 2 ? 'odd' : 'even' }}>
+                                                <td>
+                                                    {{ $index + 1 }}
+                                                </td>
+                                                <td>{{ $rekening->bank->kode_bank }}</td>
+                                                <td>{{ $rekening->no_rekening }}</td>
+                                                <td>{{ $rekening->atas_nama }}</td>
+                                                <td class="text-end">
+                                                    <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
+                                                        data-kt-menu-trigger="click"
+                                                        data-kt-menu-placement="bottom-end">Actions
+                                                        <span class="svg-icon svg-icon-5 m-0">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                                viewBox="0 0 24 24" fill="none">
+                                                                <path
+                                                                    d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
+                                                                    fill="black"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </a>
+                                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
+                                                        data-kt-menu="true">
+                                                        <div class="menu-item px-3">
+                                                            <a href="{{ route('rekening.edit', $rekening->id) }}"
+                                                                class="menu-link px-3">Edit</a>
+                                                        </div>
+                                                        <div class="menu-item px-3">
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-white menu-link px-3"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#kt_modal_{{ $rekening->id }}">Hapus</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal fade text-start" tabindex="-1"
+                                                        id="kt_modal_{{ $rekening->id }}">
+                                                        <form action="{{ route('rekening.destroy', $rekening->id) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Konfirmasi Hapus</h5>
+                                                                        <div class="btn btn-icon btn-sm btn-active-light-primary ms-2"
+                                                                            data-bs-dismiss="modal" aria-label="Close">
+                                                                            <span class="svg-icon svg-icon-2x"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>Apakah anda yakin menghapus data ini?</p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-light"
+                                                                            data-bs-dismiss="modal">Batal</button>
+                                                                        <button type="submit" class="btn btn-danger">Ya,
+                                                                            Hapus</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                    <!--end::Table-->
+                    @else
+                        <div class="d-flex flex-column flex-column-fluid text-center p-6 py-lg-10">
+                            <div class="d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-350px"
+                                style="background-image: url(media/illustrations/sketchy-1/17.png"></div>
+                            <div class="pt-lg-5 mb-5">
+                                <h1 class="fw-bolder fs-2qx text-gray-800 mb-5">Data Kosong</h1>
+                                <div class="fw-bold fs-3 text-muted">
+                                    <p> Silahkan tambahkan data baru!</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </div>
-                <!--end::Card body-->
             </div>
-            <!--end::Card-->
         </div>
-        <!--end::Container-->
     </div>
 @endsection
