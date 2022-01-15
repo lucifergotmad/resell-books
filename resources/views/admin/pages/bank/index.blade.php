@@ -166,11 +166,12 @@
                                                             <button type="button"
                                                                 class="btn btn-sm btn-white menu-link px-3"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#kt_modal_1">Hapus</button>
+                                                                data-bs-target="#kt_modal_{{ $bank->id }}">Hapus</button>
                                                         </div>
                                                     </div>
 
-                                                    <div class="modal fade text-start" tabindex="-1" id="kt_modal_1">
+                                                    <div class="modal fade text-start" tabindex="-1"
+                                                        id="kt_modal_{{ $bank->id }}">
                                                         <form action="{{ route('bank.destroy', $bank->id) }}"
                                                             method="POST">
                                                             @csrf
