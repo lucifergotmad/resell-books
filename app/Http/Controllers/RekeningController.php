@@ -80,7 +80,9 @@ class RekeningController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rekening = Rekening::find($id);
+
+        return view('admin.pages.rekening.edit', compact('rekening'));
     }
 
     /**
