@@ -74,7 +74,6 @@
                                 <!--begin::Search-->
                                 <div class="d-flex align-items-center position-relative my-6">
 
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
                                     <span class="svg-icon svg-icon-1 position-absolute ms-6">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                             fill="none">
@@ -89,10 +88,13 @@
                                     <input type="text" name="keyword" data-kt-user-table-filter="search"
                                         class="form-control form-control-solid w-250px ps-14"
                                         placeholder="Cari data rekening" value="{{ request('keyword') }}">
+                                    <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+
                                     <button type="submit" class="btn btn-secondary mr-auto">Cari</button>
 
 
-                                    <button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click"
+
+                                    <button type="button" class="btn btn-light-primary ml-auto" data-kt-menu-trigger="click"
                                         data-kt-menu-placement="bottom-end">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
                                         <span class="svg-icon svg-icon-2">
