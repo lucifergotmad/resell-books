@@ -9,7 +9,11 @@ class Rekening extends Model
 {
     use HasFactory;
 
-    public function bank() {
+    protected $table = "tm_rekening";
+    protected $fillable = ['kode_bank', 'no_rekening', 'atas_nama'];
+
+    public function bank()
+    {
         return $this->hasOne(Bank::class);
     }
 }
