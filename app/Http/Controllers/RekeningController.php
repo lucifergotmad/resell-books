@@ -95,7 +95,15 @@ class RekeningController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'kode_bank' => 'required',
+            'no_rekening' => 'required|min:10|max:16',
+            'atas_nama' => 'required',
+        ]);
+
+        Rekening::find($id)->update($request->all());
+
+        return redirect()->route('rekening.index')->with('success', 'Rekening berhasil di update!');
     }
 
     /**
