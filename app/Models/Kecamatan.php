@@ -13,4 +13,9 @@ class Kecamatan extends Model
     {
         return $this->hasOne(Kota::class);
     }
+
+    public function alamat()
+    {
+        return $this->belongsTo(Alamat::class);
+    }
 }
