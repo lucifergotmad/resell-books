@@ -13,7 +13,7 @@ class CreatePenyewaanDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tt_penyewaan', function (Blueprint $table) {
+        Schema::create('tt_penyewaan_detail', function (Blueprint $table) {
             $table->id();
             $table->string('no_sewa');
             $table->string('kode_buku');
@@ -24,7 +24,6 @@ class CreatePenyewaanDetailsTable extends Migration
             $table->timestamps();
 
             $table->foreign('no_sewa')->references('no_sewa')->on('tt_penyewaan');
-            $table->timestamps();
         });
     }
 
@@ -35,6 +34,6 @@ class CreatePenyewaanDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tt_penyewaan');
+        Schema::dropIfExists('tt_penyewaan_detail');
     }
 }

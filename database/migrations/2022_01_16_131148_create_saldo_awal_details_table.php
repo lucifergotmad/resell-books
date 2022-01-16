@@ -27,7 +27,7 @@ class CreateSaldoAwalDetailsTable extends Migration
             $table->string('tahun_terbit');
             $table->timestamps();
 
-            $table->foreign('no_tranksasi')->references('no_transaksi')->on('tt_saldo_awal');
+            $table->foreign('no_transaksi')->references('no_transaksi')->on('tt_saldo_awal');
         });
     }
 

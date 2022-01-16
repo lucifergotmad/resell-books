@@ -10,6 +10,7 @@ class Keuangan extends Model
     use HasFactory;
 
     protected $table = 'tm_keuangan';
+    protected $fillable = ['no_rekening', 'saldo'];
 
     public function rekening()
     {
