@@ -9,7 +9,11 @@ class Buku extends Model
 {
     use HasFactory;
 
-    public function kategori() {
+    protected $table = 'tm_buku';
+    protected $fillable = ['harga_jual', 'harga_sewa'];
+
+    public function kategori()
+    {
         return $this->hasOne(Kategori::class);
     }
 }
