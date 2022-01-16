@@ -15,10 +15,12 @@ class CreateStockBukusTable extends Migration
     {
         Schema::create('tm_stock_buku', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_buku');
+            $table->string('kode_buku')->unique();
             $table->integer('total_qty');
             $table->double('total_berat');
             $table->timestamps();
+
+            $table->foreign('kode_buku')->references('kode_buku')->on('tm_buku');
         });
     }
 

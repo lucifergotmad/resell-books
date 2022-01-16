@@ -16,4 +16,9 @@ class Buku extends Model
     {
         return $this->hasOne(Kategori::class);
     }
+
+    public function stock_buku()
+    {
+        return $this->belongsTo(StockBuku::class);
+    }
 }
