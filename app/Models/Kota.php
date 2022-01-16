@@ -9,6 +9,9 @@ class Kota extends Model
 {
     use HasFactory;
 
+    protected $table = 'tm_kota';
+    protected $fillable = ['kode_provinsi', 'kode_kota', 'nama_kota'];
+
     public function provinsi()
     {
         return $this->hasOne(Provinsi::class);
