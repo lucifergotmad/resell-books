@@ -13,9 +13,19 @@ class CreateAlamatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('alamats', function (Blueprint $table) {
+        Schema::create('tm_alamat', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_member');
+            $table->string('alamat');
+            $table->string('kode_provinsi');
+            $table->string('kode_kota');
+            $table->string('kode_kecamatan');
+            $table->string('kode_pos');
             $table->timestamps();
+
+            $table->foreign('kode_provinsi')->references('kode_provinsi')->on('tm_provinsi');
+            $table->foreign('kode_kota')->references('kode_kota')->on('tm_kota');
+            $table->foreign('kode_kecamatan')->references('kode_kecamatan')->on('tm_kecamatan');
         });
     }
 
@@ -26,6 +36,6 @@ class CreateAlamatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alamats');
+        Schema::dropIfExists('tm_alamat');
     }
 }
