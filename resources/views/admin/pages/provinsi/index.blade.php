@@ -110,7 +110,7 @@
                                                 </rect>
                                             </svg>
                                         </span>
-                                        Tambah Data Bank
+                                        Tambah Data Provinsi
                                     </button>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="card-body pt-2">
-                    @if ($banks->count())
+                    @if ($provinsis->count())
                         <div id="kt_table_users_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                             <div class="table-responsive">
                                 <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer"
@@ -128,20 +128,20 @@
                                             <th>
                                                 No
                                             </th>
-                                            <th>Kode Bank</th>
-                                            <th>Nama Bank</th>
+                                            <th>Kode Provinsi</th>
+                                            <th>Nama Provinsi</th>
                                             <th></th>
 
                                         </tr>
                                     </thead>
                                     <tbody class="text-gray-600 fw-bold">
-                                        @foreach ($banks as $index => $bank)
+                                        @foreach ($provinsis as $index => $provinsi)
                                             <tr class={{ ($index + 1) % 2 ? 'odd' : 'even' }}>
                                                 <td>
                                                     {{ $index + 1 }}
                                                 </td>
-                                                <td>{{ $bank->kode_bank }}</td>
-                                                <td>{{ $bank->nama_bank }}</td>
+                                                <td>{{ $provinsi->kode_provinsi }}</td>
+                                                <td>{{ $provinsi->nama_provinsi }}</td>
                                                 <td class="text-center">
                                                     <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
                                                         data-kt-menu-trigger="click"
@@ -158,7 +158,7 @@
                                                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
                                                         data-kt-menu="true">
                                                         <div class="menu-item px-3">
-                                                            <a href="{{ route('bank.edit', $bank->id) }}"
+                                                            <a href="{{ route('provinsi.edit', $provinsi->id) }}"
                                                                 class="menu-link px-3">
                                                                 Edit</a>
                                                         </div>
@@ -166,13 +166,13 @@
                                                             <button type="button"
                                                                 class="btn btn-sm btn-white menu-link px-3"
                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#kt_modal_{{ $bank->id }}">Hapus</button>
+                                                                data-bs-target="#kt_modal_{{ $provinsi->id }}">Hapus</button>
                                                         </div>
                                                     </div>
 
                                                     <div class="modal fade text-start" tabindex="-1"
-                                                        id="kt_modal_{{ $bank->id }}">
-                                                        <form action="{{ route('bank.destroy', $bank->id) }}"
+                                                        id="kt_modal_{{ $provinsi->id }}">
+                                                        <form action="{{ route('provinsi.destroy', $provinsi->id) }}"
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')
