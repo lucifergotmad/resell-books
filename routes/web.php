@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KeuanganController;
+use App\Http\Controllers\ProvinsiController;
 use App\Http\Controllers\RekeningController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,7 @@ Route::resources(
         'buku' => BukuController::class,
         'bank' => BankController::class,
         'rekening' => RekeningController::class,
+        'provinsi' => ProvinsiController::class,
     ],
     [
         'except' => ['create', 'show'],
