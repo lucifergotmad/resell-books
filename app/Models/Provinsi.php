@@ -13,4 +13,14 @@ class Provinsi extends Model
 
     protected $fillable = ['kode_provinsi', 'nama_provinsi'];
 
+    public function kota()
+    {
+        return $this->belongsTo(Kota::class);
+    }
+
+    public function alamat()
+    {
+        return $this->belongsTo(Alamat::class);
+    }
+
 }
