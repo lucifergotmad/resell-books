@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMembersTable extends Migration
+class CreateTerimaBukusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateMembersTable extends Migration
      */
     public function up()
     {
-        Schema::create('tm_member', function (Blueprint $table) {
+        Schema::create('tt_terima_buku', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_member')->unique();
-            $table->string('no_ktp');
-            $table->string('no_hp');
-            $table->string('nama_member');
-            $table->date('tanggal_lahir');
-            $table->integer('poin');
+            $table->string('no_terima')->unique();
+            $table->date('tanggal');
+            $table->double('total_berat');
+            $table->integer('total_qty');
+            $table->double('total_harga');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateMembersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tm_member');
+        Schema::dropIfExists('tt_terima_buku');
     }
 }
