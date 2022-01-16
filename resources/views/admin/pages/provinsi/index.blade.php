@@ -84,15 +84,15 @@
                                     <div class="mb-10">
                                         <label for="kode_provinsi" class="required form-label">Kode
                                             Provinsi</label>
-                                        <input id="kode_bank" type="text" name="kode_bank" class="form-control"
+                                        <input id="kode_provinsi" type="text" name="kode_provinsi" class="form-control"
                                             placeholder="BCA" autocomplete="false" />
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-10">
-                                        <label for="nama_bank" class="required form-label">Nama
+                                        <label for="nama_provinsi" class="required form-label">Nama
                                             Provinsi</label>
-                                        <input id="nama_bank" type="text" name="nama_bank" class="form-control"
+                                        <input id="nama_provinsi" type="text" name="nama_provinsi" class="form-control"
                                             placeholder="Bank Central Asia" autocomplete="false" />
                                     </div>
                                 </div>
