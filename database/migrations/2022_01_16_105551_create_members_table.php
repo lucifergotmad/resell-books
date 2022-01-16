@@ -13,8 +13,14 @@ class CreateMembersTable extends Migration
      */
     public function up()
     {
-        Schema::create('members', function (Blueprint $table) {
+        Schema::create('tm_member', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_member');
+            $table->string('no_ktp');
+            $table->string('no_hp');
+            $table->string('nama_member');
+            $table->date('tanggal_lahir');
+            $table->integer('poin');
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ class CreateMembersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('tm_member');
     }
 }
