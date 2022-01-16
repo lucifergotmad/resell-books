@@ -12,4 +12,8 @@ class TerimaBuku extends Model
     protected $table = 'tt_terima_buku';
     protected $fillable = ['no_terima', 'tanggal', 'total_berat', 'total_harga', 'total_qty'];
 
+    public function terima_buku_detail()
+    {
+        return $this->belongsTo(TerimaBukuDetail::class);
+    }
 }
