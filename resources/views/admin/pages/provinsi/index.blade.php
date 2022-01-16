@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin', ['title' => 'Data Provinsi'])
 
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -85,7 +85,7 @@
                                         <label for="kode_provinsi" class="required form-label">Kode
                                             Provinsi</label>
                                         <input id="kode_provinsi" type="text" name="kode_provinsi" class="form-control"
-                                            placeholder="BCA" autocomplete="false" />
+                                            placeholder="001" autocomplete="false" />
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -93,7 +93,7 @@
                                         <label for="nama_provinsi" class="required form-label">Nama
                                             Provinsi</label>
                                         <input id="nama_provinsi" type="text" name="nama_provinsi" class="form-control"
-                                            placeholder="Bank Central Asia" autocomplete="false" />
+                                            placeholder="Jawa Barat" autocomplete="false" />
                                     </div>
                                 </div>
                             </div>
