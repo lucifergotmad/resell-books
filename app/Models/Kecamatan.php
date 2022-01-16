@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Kecamatan extends Model
 {
     use HasFactory;
+
+    public function kota()
+    {
+        return $this->hasOne(Kota::class);
+    }
 }
