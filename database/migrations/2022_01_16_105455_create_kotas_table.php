@@ -13,10 +13,16 @@ class CreateKotasTable extends Migration
      */
     public function up()
     {
-        Schema::create('kotas', function (Blueprint $table) {
+        Schema::create('tm_kota', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_provinsi');
+            $table->string('kode_kota')->unique();
+            $table->string('nama_kota');
             $table->timestamps();
+
+            $table->foreign('kode_provinsi')->references('kode_provinsi')->on('tm_provinsi');
         });
+
     }
 
     /**
@@ -26,6 +32,6 @@ class CreateKotasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kotas');
+        Schema::dropIfExists('tm_kota');
     }
 }
