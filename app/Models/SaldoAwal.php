@@ -11,4 +11,9 @@ class SaldoAwal extends Model
 
     protected $table = 'tt_saldo_awal';
     protected $fillable = ['no_transaksi', 'tanggal', 'total_berat', 'total_qty', 'total_harga'];
+
+    public function saldo_awal_detail()
+    {
+        return $this->belongsTo(SaldoAwalDetail::class);
+    }
 }
