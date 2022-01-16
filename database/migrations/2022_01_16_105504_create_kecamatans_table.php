@@ -13,9 +13,14 @@ class CreateKecamatansTable extends Migration
      */
     public function up()
     {
-        Schema::create('kecamatans', function (Blueprint $table) {
+        Schema::create('tm_kecamatan', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_kota');
+            $table->string('kode_kecamatan')->unique();
+            $table->string('nama_kecamatan');
             $table->timestamps();
+
+            $table->foreign('kode_kota')->references('kode_kota')->on('tm_kota');
         });
     }
 
@@ -26,6 +31,6 @@ class CreateKecamatansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kecamatans');
+        Schema::dropIfExists('tm_kecamatan');
     }
 }
