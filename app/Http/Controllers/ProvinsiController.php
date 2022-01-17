@@ -104,6 +104,8 @@ class ProvinsiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Provinsi::find($id)->delete();
+
+        return redirect()->route('provinsi.index')->with('success', 'Provinsi berhasil dihapus');
     }
 }
