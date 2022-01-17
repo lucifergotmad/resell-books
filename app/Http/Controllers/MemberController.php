@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -11,9 +12,15 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->keyword) {
+            $members = Member::where('nama_member', 'LIKE', '%' . $request->keyword . '%')->get();
+        } else {
+            $members = Member::orderBy('created_at', 'desc')->limit(10)->get();
+        }
+
+        return view('admin.pages.member.index', ['members' => $members]);
     }
 
     /**

@@ -7,6 +7,7 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KotaController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProvinsiController;
 use App\Http\Controllers\RekeningController;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,7 @@ Route::resources(
         'provinsi' => ProvinsiController::class,
         'kota' => KotaController::class,
         'kecamatan' => KecamatanController::class,
+        'member' => MemberController::class,
     ],
     [
         'except' => ['create', 'show'],
