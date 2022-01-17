@@ -94,7 +94,16 @@ class MemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_member' => 'required',
+            'tanggal_lahir' => 'required',
+            'no_ktp' => 'required',
+            'no_hp' => 'required',
+        ]);
+
+        Member::find($id)->update($request->all());
+
+        return redirect()->route('member.index')->with('success', 'Member berhasil diupdate');
     }
 
     /**
