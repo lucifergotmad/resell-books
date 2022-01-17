@@ -80,7 +80,9 @@ class MemberController extends Controller
      */
     public function edit($id)
     {
-        //
+        $member = Member::find($id);
+
+        return view('admin.pages.member.edit', compact('member'));
     }
 
     /**
