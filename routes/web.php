@@ -12,6 +12,7 @@ use App\Http\Controllers\KotaController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProvinsiController;
 use App\Http\Controllers\RekeningController;
+use App\Http\Controllers\TerimaBukuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,7 @@ Route::resources(
         'kecamatan' => KecamatanController::class,
         'member' => MemberController::class,
         'alamat' => AlamatController::class,
+        'terima-buku' => TerimaBukuController::class,
     ],
     [
         'except' => ['create', 'show'],
