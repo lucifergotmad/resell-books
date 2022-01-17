@@ -10,5 +10,5 @@ class Member extends Model
     use HasFactory;
 
     protected $table = 'tm_member';
-    protected $fillable = ['nama_member', 'no_ktp', 'no_hp', 'tanggal_lahir'];
+    protected $fillable = ['kode_member', 'nama_member', 'no_ktp', 'no_hp', 'tanggal_lahir'];
 }
