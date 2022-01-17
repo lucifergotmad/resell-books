@@ -52,9 +52,9 @@
                                     <div class="col-lg-4">
                                         <div class="mb-10">
                                             <label for="pengarang" class="required form-label">Pengarang</label>
-                                            <input id="pengarang" type="date" name="pengarang" class="form-control"
-                                                placeholder="2000-10-28" autocomplete="false"
-                                                value="{{ $buku->pengarang }}" />
+                                            <input id="pengarang" type="text" name="pengarang" class="form-control"
+                                                placeholder="Andrea Hirata" autocomplete="false"
+                                                value="{{ $buku->pengarang }}" disabled />
                                         </div>
                                     </div>
                                 </div>

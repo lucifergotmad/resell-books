@@ -74,7 +74,14 @@ class BukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'harga_jual' => 'required',
+            'harga_sewa' => 'required',
+        ]);
+
+        Buku::find($id)->update($request->all());
+
+        return redirect()->route('buku.index')->with('success', 'Berhasil menambahkan harga jual & sewa!');
     }
 
     /**
