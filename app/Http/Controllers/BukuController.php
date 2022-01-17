@@ -60,7 +60,9 @@ class BukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $buku = Buku::find($id);
+
+        return view('admin.pages.buku.edit', compact('buku'));
     }
 
     /**
