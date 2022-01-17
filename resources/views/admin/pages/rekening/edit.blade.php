@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <div class="toolbar" id="kt_toolbar">
+        <div class="toolbar py-12" id="kt_toolbar">
             <div id="kt_toolbar_container" class="container d-flex flex-stack">
                 <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
                     data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
