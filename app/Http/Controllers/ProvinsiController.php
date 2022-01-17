@@ -12,9 +12,13 @@ class ProvinsiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $provinsis = Provinsi::all();
+        if ($request->keyword) {
+            $provinsis = Provinsi::where('nama_provinsi', 'LIKE', "%" . $request->keyword . '%')->get();
+        } else {
+            $provinsis = Provinsi::all();
+        }
 
         return view('admin.pages.provinsi.index', compact('provinsis'));
     }
@@ -37,7 +41,17 @@ class ProvinsiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kode_provinsi' => 'required|unique:tm_provinsi|max:4',
+            'nama_provinsi' => 'required',
+        ]);
+
+        Provinsi::create([
+            'kode_provinsi' => $request->kode_provinsi,
+            'nama_provinsi' => $request->nama_provinsi,
+        ]);
+
+        return redirect()->route('provinsi.index')->with('success', 'Provinsi berhasil ditambahkan!');
     }
 
     /**
