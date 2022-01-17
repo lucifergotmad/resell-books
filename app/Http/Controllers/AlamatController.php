@@ -79,7 +79,9 @@ class AlamatController extends Controller
      */
     public function edit($id)
     {
-        //
+        $alamat = Alamat::find($id);
+
+        return view('admin.pages.alamat.edit', compact('alamat'));
     }
 
     /**
@@ -102,6 +104,8 @@ class AlamatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Alamat::find($id)->delete();
+
+        return redirect()->route('alamat.index')->with('success', 'Berhasil menghapus alamat!');
     }
 }
