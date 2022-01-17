@@ -117,7 +117,7 @@ class MemberController extends Controller
     {
         $member = Member::find($id);
 
-        $alamat = Alamat::find($member->kode_member);
+        $alamat = Alamat::where('kode_member', "=", $member->kode_member);
 
         $member->delete();
 

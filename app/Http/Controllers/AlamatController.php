@@ -46,7 +46,18 @@ class AlamatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kode_member' => 'required',
+            'alamat' => 'required',
+            'kode_provinsi' => 'required',
+            'kode_kota' => 'required',
+            'kode_kecamatan' => 'required',
+            'kode_pos' => 'required',
+        ]);
+
+        Alamat::create($request->all());
+
+        return redirect()->route('member.index')->with('success', 'Berhasil menambahkan alamat');
     }
 
     /**
