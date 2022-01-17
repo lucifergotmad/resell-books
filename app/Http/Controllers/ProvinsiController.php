@@ -73,7 +73,9 @@ class ProvinsiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $provinsi = Provinsi::find($id);
+
+        return view('admin.pages.provinsi.edit', compact('provinsi'));
     }
 
     /**
