@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KotaController;
@@ -34,6 +35,7 @@ Route::get('/', AdminController::class);
 Route::resources(
     [
         'buku' => BukuController::class,
+        'kategori' => KategoriController::class,
         'bank' => BankController::class,
         'rekening' => RekeningController::class,
         'provinsi' => ProvinsiController::class,
