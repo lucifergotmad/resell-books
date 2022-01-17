@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
 use Illuminate\Http\Request;
 
 class PenjualanController extends Controller
@@ -13,7 +14,9 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        //
+        $members = Member::all();
+
+        return view('admin.pages.penjualan.index', compact('members'));
     }
 
     /**

@@ -10,6 +10,7 @@ use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\ProvinsiController;
 use App\Http\Controllers\RekeningController;
 use App\Http\Controllers\TerimaBukuController;
@@ -46,6 +47,7 @@ Route::resources(
         'member' => MemberController::class,
         'alamat' => AlamatController::class,
         'terima-buku' => TerimaBukuController::class,
+        'penjualan' => PenjualanController::class,
     ],
     [
         'except' => ['create', 'show'],

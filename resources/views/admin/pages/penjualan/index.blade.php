@@ -64,7 +64,7 @@
                                         <div class="mb-10">
                                             <label for="no_penjualan" class="required form-label">No Penjualan</label>
                                             <input id="no_penjualan" type="text" name="no_penjualan" class="form-control"
-                                                placeholder="TB-000001" autocomplete="false" />
+                                                placeholder="NP-000001" autocomplete="false" />
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
