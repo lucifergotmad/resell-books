@@ -7,7 +7,6 @@ use App\Models\Member;
 use App\Models\Penjualan;
 use App\Models\PenjualanDetail;
 use App\Models\StockBuku;
-use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 
 class PenjualanController extends Controller
@@ -125,14 +124,4 @@ class PenjualanController extends Controller
         //
     }
 
-    public function laporan_penjualan(Request $request)
-    {
-        $data = Penjualan::where('tanggal', '>=', $request->start_date)->where('tanggal', '<=', $request->end_date)->where('kode_member', $request->kode_member);
-
-        view()->share('penjualan', $data);
-
-        $pdf = PDF::loadView('admin.pages.penjualan.report', $data);
-
-        return $pdf->download('pdf_file.pdf');
-    }
 }

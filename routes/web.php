@@ -9,6 +9,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KotaController;
+use App\Http\Controllers\LaporanPenjualanController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\ProvinsiController;
@@ -53,5 +54,6 @@ Route::resources(
         'except' => ['create', 'show'],
     ]
 );
-Route::get('/penjualan/report', [PenjualanController::class, 'laporan_penjualan']);
+Route::get('/laporan-penjualan', [LaporanPenjualanController::class, 'index']);
+Route::get('/laporan-penjualan/pdf', [LaporanPenjualanController::class, 'createPDF']);
 Route::get('/keuangan', KeuanganController::class);

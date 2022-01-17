@@ -337,7 +337,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <a class="menu-link" href="../../demo1/dist/apps/calendar.html">
+                    <a class="menu-link" href="/laporan-penjualan">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: assets/media/icons/duotune/graphs/gra001.svg-->
                             <span class="svg-icon svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg"
