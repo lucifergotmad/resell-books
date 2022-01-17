@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\ProvinsiController;
@@ -36,6 +37,7 @@ Route::resources(
         'rekening' => RekeningController::class,
         'provinsi' => ProvinsiController::class,
         'kota' => KotaController::class,
+        'kecamatan' => KecamatanController::class,
     ],
     [
         'except' => ['create', 'show'],

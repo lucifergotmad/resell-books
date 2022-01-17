@@ -23,7 +23,7 @@ class KecamatanController extends Controller
             $kecamatans = Kecamatan::all();
         }
 
-        return view('admin.pages.kota.index', ['kotas' => $kotas, 'kecamatans' => $kecamatans]);
+        return view('admin.pages.kecamatan.index', ['kotas' => $kotas, 'kecamatans' => $kecamatans]);
     }
 
     /**

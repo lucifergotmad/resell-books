@@ -48,7 +48,7 @@ class KotaController extends Controller
     {
         $request->validate([
             'kode_provinsi' => 'required',
-            'kode_kota' => 'required|min:1|max:4',
+            'kode_kota' => 'required|min:1|max:4|unique:tm_kota',
             'nama_kota' => 'required',
         ]);
 
