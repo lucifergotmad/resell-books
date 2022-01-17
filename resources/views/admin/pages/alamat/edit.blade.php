@@ -1,4 +1,4 @@
-@extends('layouts.admin', ['title' => 'Data Alamat'])
+@extends('layouts.admin', ['title' => 'Edit Alamat'])
 
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -56,8 +56,9 @@
 
                 <div class="post d-flex flex-column-fluid" id="kt_post">
                     <div id="kt_content_container" class="container-xxl">
-                        <form action="{{ route('alamat.update') }}" method="POST">
+                        <form action="{{ route('alamat.update', $alamat->id) }}" method="POST">
                             @csrf
+                            @method('PUT')
                             <div class="row px-4">
                                 <div class="col-lg-4">
                                     <div class="mb-10">

@@ -18,12 +18,14 @@ class AlamatController extends Controller
      */
     public function index(Request $request)
     {
-        $member = Member::find($request->id);
+        if ($request) {
+            $member = Member::find($request->id);
+        }
         $provinsis = Provinsi::all();
         $kotas = Kota::all();
         $kecamatans = Kecamatan::all();
 
-        $alamats = Alamat::all();
+        $alamats = Alamat::where('kode_member', '=', $member->kode_member);
 
         return view('admin.pages.alamat.index', compact('member', "provinsis", 'kotas', 'kecamatans', 'alamats'));
     }
@@ -80,8 +82,11 @@ class AlamatController extends Controller
     public function edit($id)
     {
         $alamat = Alamat::find($id);
+        $provinsis = Provinsi::all();
+        $kotas = Kota::all();
+        $kecamatans = Kecamatan::all();
 
-        return view('admin.pages.alamat.edit', compact('alamat'));
+        return view('admin.pages.alamat.edit', compact('alamat', 'provinsis', 'kotas', 'kecamatans'));
     }
 
     /**
@@ -93,7 +98,18 @@ class AlamatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'kode_member' => 'required',
+            'alamat' => 'required',
+            'kode_provinsi' => 'required',
+            'kode_kota' => 'required',
+            'kode_kecamatan' => 'required',
+            'kode_pos' => 'required',
+        ]);
+
+        Alamat::find($id)->update($request->all());
+
+        return redirect()->route('member.index')->with('success', 'Berhasil mengupdate alamat!');
     }
 
     /**
@@ -106,6 +122,6 @@ class AlamatController extends Controller
     {
         Alamat::find($id)->delete();
 
-        return redirect()->route('alamat.index')->with('success', 'Berhasil menghapus alamat!');
+        return redirect()->route('member.index')->with('success', 'Berhasil menghapus alamat!');
     }
 }
