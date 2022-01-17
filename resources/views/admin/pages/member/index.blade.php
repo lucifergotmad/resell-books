@@ -70,7 +70,6 @@
                                     </span>
                                     <input type="text" name="keyword" class="form-control form-control-solid w-350px ps-14"
                                         placeholder="Cari data member" value="{{ request('keyword') }}">
-                                    <button type="submit" class="btn btn-secondary">Cari</button>
                             </form>
                         </div>
                     </div>
