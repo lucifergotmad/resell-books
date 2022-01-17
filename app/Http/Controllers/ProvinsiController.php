@@ -87,7 +87,13 @@ class ProvinsiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_provinsi' => 'required',
+        ]);
+
+        Provinsi::find($id)->update($request->all());
+
+        return redirect()->route('provinsi.index')->with('success', 'Provinsi berhasil diupdate!');
     }
 
     /**
