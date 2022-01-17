@@ -10,7 +10,7 @@ class Buku extends Model
     use HasFactory;
 
     protected $table = 'tm_buku';
-    protected $fillable = ['harga_jual', 'harga_sewa'];
+    protected $fillable = ['kode_buku', 'judul_buku', 'pengarang', 'harga_jual', 'harga_sewa', 'kode_kategori', 'berat', 'penerbit', 'tahun_terbit', 'harga_jual', 'harga_sewa'];
 
     public function kategori()
     {

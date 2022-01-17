@@ -9,8 +9,8 @@ class TerimaBukuDetail extends Model
 {
     use HasFactory;
 
-    protected $table = 'tt_terima_buku';
-    protected $fillable = ['no_transaksi', 'kode_buku', 'judul_buku', 'pengarang', 'berat', 'qty', 'harga_beli', 'kategori', 'penerbit', 'tahun_terbit'];
+    protected $table = 'tt_terima_buku_detail';
+    protected $fillable = ['no_terima', 'kode_buku', 'judul_buku', 'pengarang', 'berat', 'qty', 'harga_beli', 'kategori', 'penerbit', 'tahun_terbit'];
 
     public function terima_buku()
     {

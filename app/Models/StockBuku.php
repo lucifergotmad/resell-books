@@ -10,6 +10,7 @@ class StockBuku extends Model
     use HasFactory;
 
     protected $table = 'tm_stock_buku';
+    protected $fillable = ['kode_buku', 'total_berat', 'total_qty'];
 
     public function buku()
     {

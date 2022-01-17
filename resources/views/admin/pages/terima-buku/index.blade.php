@@ -124,7 +124,7 @@
                                     <div class="col-lg-4">
                                         <div class="mb-10">
                                             <label class="required form-label fs-6 fw-bold">Kategori</label>
-                                            <select name="kode_kategori"
+                                            <select name="kategori"
                                                 class="form-select form-select-solid fw-bolder select2-hidden-accessible"
                                                 data-kt-select2="true" data-placeholder="Select option"
                                                 data-allow-clear="true" data-kt-user-table-filter="role"
