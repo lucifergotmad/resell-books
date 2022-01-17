@@ -187,7 +187,7 @@
                                                         </rect>
                                                     </svg>
                                                 </span>
-                                                Tambah Data Provinsi
+                                                Tambah Data Kota
                                             </button>
                                         @else
                                             <button type="submit" class="btn btn-primary" disabled>
@@ -202,7 +202,7 @@
                                                         </rect>
                                                     </svg>
                                                 </span>
-                                                Tambah Data Provinsi
+                                                Tambah Data Kota
                                             </button>
                                         @endif
                                     </div>
@@ -222,9 +222,9 @@
                                             <th>
                                                 No
                                             </th>
-                                            <th>Kode Bank</th>
-                                            <th>No Rekening</th>
-                                            <th>Atas Nama</th>
+                                            <th>Kode Provinsi</th>
+                                            <th>Kode Kota</th>
+                                            <th>Nama Kota</th>
                                             <th></th>
 
                                         </tr>

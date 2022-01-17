@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Kota;
 use App\Models\Provinsi;
-use App\Models\Rekening;
 use Illuminate\Http\Request;
 
 class KotaController extends Controller
@@ -53,7 +52,7 @@ class KotaController extends Controller
             'nama_kota' => 'required',
         ]);
 
-        Rekening::create([
+        Kota::create([
             'kode_provinsi' => $request->kode_provinsi,
             'kode_kota' => $request->kode_kota,
             'nama_kota' => $request->nama_kota,
@@ -98,7 +97,6 @@ class KotaController extends Controller
     {
         $request->validate([
             'kode_provinsi' => 'required',
-            'kode_kota' => 'required|min:1|max:4',
             'nama_kota' => 'required',
         ]);
 
