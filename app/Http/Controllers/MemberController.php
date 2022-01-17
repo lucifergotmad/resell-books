@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alamat;
 use App\Models\Member;
 use Illuminate\Http\Request;
 
@@ -103,7 +104,7 @@ class MemberController extends Controller
 
         Member::find($id)->update($request->all());
 
-        return redirect()->route('member.index')->with('success', 'Member berhasil diupdate');
+        return redirect()->route('member.index')->with('success', 'Member berhasil diupdate!');
     }
 
     /**
@@ -114,6 +115,18 @@ class MemberController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $member = Member::find($id);
+
+        $alamat = Alamat::find($member->kode_member);
+
+        $member->delete();
+
+        if (!$alamat) {
+            return redirect()->route('member.index')->with('success', 'Member berhasil dihapus!');
+        }
+
+        $alamat->delete();
+
+        return redirect()->route('member.index')->with('success', 'Member berhasil dihapus!');
     }
 }
