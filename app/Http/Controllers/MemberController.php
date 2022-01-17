@@ -41,7 +41,24 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kode_member' => 'required|unique:tm_member|max:10',
+            'nama_member' => 'required',
+            'tanggal_lahir' => 'required',
+            'no_ktp' => 'required|unique:tm_member|max:16',
+            'no_hp' => 'required|max:12',
+        ]);
+
+        Member::create([
+            'kode_member' => $request->kode_member,
+            'nama_member' => $request->nama_member,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'no_ktp' => $request->no_ktp,
+            'no_hp' => $request->no_hp,
+            'poin' => 0,
+        ]);
+
+        return redirect()->route('member.index')->with('success', 'Member berhasil ditambahkan!');
     }
 
     /**
