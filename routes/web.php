@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AlamatController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\BukuController;
@@ -42,6 +43,7 @@ Route::resources(
         'kota' => KotaController::class,
         'kecamatan' => KecamatanController::class,
         'member' => MemberController::class,
+        'alamat' => AlamatController::class,
     ],
     [
         'except' => ['create', 'show'],
