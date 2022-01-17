@@ -53,4 +53,5 @@ Route::resources(
         'except' => ['create', 'show'],
     ]
 );
+Route::get('/penjualan/report', [PenjualanController::class, 'laporan_penjualan']);
 Route::get('/keuangan', KeuanganController::class);

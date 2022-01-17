@@ -14,11 +14,11 @@ class Penjualan extends Model
 
     public function member()
     {
-        return $this->hasOne(Member::class);
+        return $this->hasOne(Member::class, 'kode_member', 'kode_member');
     }
 
     public function penjualan_detail()
     {
-        return $this->belongsTo(PenjualanDetail::class);
+        return $this->belongsTo(PenjualanDetail::class, 'no_penjualan', 'no_penjualan');
     }
 }
