@@ -31,9 +31,9 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [AuthController::class, 'auth']);
 Route::post('/register', [AuthController::class, 'store']);
 
-Route::view('/login', 'auth.login');
-Route::view('/register', 'auth.register');
-Route::view('/forgot-password', 'auth.forgot_password');
+Route::view('/login', 'auth.login')->name('auth.login');
+Route::view('/register', 'auth.register')->name('auth.register');
+Route::view('/forgot_password', 'auth.forgot_password')->name('auth.forgot_password');
 
 Route::get('/', AdminController::class);
 Route::resources(
